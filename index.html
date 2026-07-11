@@ -1,1 +1,278 @@
-afhlahfioazhfoihaz
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111014">
+<title>Menu — Bunz</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#111014;--bg2:#1A1920;--bg3:#232129;
+  --acc:#FFB03A;--acc2:#FF8C1A;
+  --txt:#F4F1EA;--txt2:#B9B4AA;--gray:#726D64;
+  --r:14px;
+  --fd:'Sora',sans-serif;--fb:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--bg)}
+
+/* Header */
+header{padding:70px 5% 40px;text-align:center}
+header .h-badge{display:inline-block;font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--acc);border:1px solid rgba(255,176,58,.3);padding:7px 20px;border-radius:30px;margin-bottom:20px}
+header h1{font-family:var(--fd);font-size:clamp(2.6rem,8vw,4.5rem);font-weight:800;letter-spacing:1px}
+header h1 span{color:var(--acc)}
+header p{color:var(--txt2);font-size:.85rem;margin-top:8px}
+
+/* Section bar */
+.bar{position:sticky;top:0;z-index:90;background:rgba(17,16,20,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,241,234,.05);overflow-x:auto;scrollbar-width:none}
+.bar::-webkit-scrollbar{display:none}
+.bar-in{display:flex;gap:4px;max-width:1100px;margin:0 auto;padding:10px 5%}
+.bar a{font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:30px;color:var(--txt2);text-decoration:none;white-space:nowrap;border:1px solid transparent;transition:all .3s var(--ease)}
+.bar a:hover{color:var(--txt);background:rgba(255,176,58,.08);border-color:rgba(255,176,58,.2)}
+
+/* Sections */
+.sec{padding:50px 5%;max-width:1100px;margin:0 auto}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.sec-head i{color:var(--acc);font-size:1.1rem}
+.sec-head h2{font-family:var(--fd);font-size:1.5rem;font-weight:700;letter-spacing:.5px}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,176,58,.3),transparent)}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid rgba(244,241,234,.05);border-radius:var(--r);overflow:hidden;transition:all .45s var(--ease)}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,176,58,.3);box-shadow:0 16px 40px -16px rgba(0,0,0,.7)}
+.v3d{position:relative;height:210px;background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.v3d model-viewer{width:100%;height:100%;opacity:0;transition:opacity .6s;--poster-color:transparent}
+.v3d.on model-viewer{opacity:1}
+.v3d .btn3d{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;color:var(--txt2);font-size:.62rem;letter-spacing:2px;text-transform:uppercase;padding:15px 26px;border-radius:var(--r);background:rgba(17,16,20,.5);border:1px solid rgba(244,241,234,.1);backdrop-filter:blur(6px);transition:all .35s var(--ease)}
+.v3d .btn3d:hover{border-color:var(--acc);color:var(--txt)}
+.v3d .btn3d i{font-size:1.2rem;color:var(--acc);animation:fl 3s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.v3d.on .btn3d{display:none}
+.body{padding:16px 20px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.nm{font-family:var(--fd);font-size:1.02rem;font-weight:600}
+.ds{font-size:.72rem;color:var(--gray);margin-top:5px;line-height:1.55}
+.px{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--acc);white-space:nowrap}
+
+footer{text-align:center;padding:50px 5% 30px;color:var(--gray);font-size:.68rem;letter-spacing:.5px}
+footer span{color:var(--acc)}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  header{padding:56px 5% 32px}
+  .v3d{height:230px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-badge">Fast Food</div>
+  <h1>BUN<span>Z</span></h1>
+  <p>Menu interactif — plats en 3D</p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <a href="#pizza">Pizza</a>
+  <a href="#tacos">Tacos</a>
+  <a href="#sandwich">Sandwich</a>
+  <a href="#burger">Burger</a>
+  <a href="#poutine">Poutine</a>
+  <a href="#poulet">Poulet Grillé</a>
+</div></div>
+
+<section class="sec" id="pizza">
+  <div class="sec-head"><i class="fas fa-pizza-slice"></i><h2>Pizza</h2><div class="line"></div></div>
+  <div class="grid">
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20margueritte.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Marguerite"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Marguerite</div><div class="ds">Sauce tomate, mozzarella, basilic, huile d'olive</div></div><div class="px">700 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20ve%CC%81ge%CC%81tarienne.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Végétarienne"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Végétarienne</div><div class="ds">Sauce tomate, mozzarella, poivron, oignon, champignons frais, basilic, tomate sèche</div></div><div class="px">800 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20viande.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Pizza Viande"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Pizza Viande</div></div><div class="px">900 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20thon.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Pizza Thon"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Pizza Thon</div></div><div class="px">900 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/napolitaine.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Napolitaine"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Napolitaine</div><div class="ds">Sauce tomate, mozzarella, câpres au choix, basilic, tomate cerise</div></div><div class="px">1000 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20poulet.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poulet"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poulet</div><div class="ds">Sauce tomate, mozzarella, poulet, poivron, basilic</div></div><div class="px">900 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%203%20fromages.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Trois Fromages"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Trois Fromages</div><div class="ds">Sauce tomate, mozzarella, camembert, basilic, gouda</div></div><div class="px">1100 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20dinde%20fume%CC%81.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poulet Fumé"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poulet Fumé</div><div class="ds">Sauce tomate, dinde fumée, mozzarella, salami, basilic, tomate cerise</div></div><div class="px">1000 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/4fromages.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Quattro Fromage"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Quattro Fromage</div><div class="ds">Sauce blanche, mozzarella, gruyère, camembert, parmesan</div></div><div class="px">1300 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/pizza%20alfonge%CC%81.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Funghi"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Funghi</div><div class="ds">Sauce blanche, mozzarella, champignons frais, tomate cerise</div></div><div class="px">1000 DA</div></div>
+  </div>
+</div></section>
+<section class="sec" id="tacos"><div class="sec-head"><i class="fas fa-burrito"></i><h2>Tacos</h2><div class="line"></div></div><div class="grid"><div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/tacos.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Tacos Poulet"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Tacos Poulet</div></div><div class="px">700 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/tacos.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Tacos Viande"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Tacos Viande</div></div><div class="px">800 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/tacos.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Tacos Mixte"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Tacos Mixte</div></div><div class="px">800 DA</div></div>
+  </div>
+</div></section>
+<section class="sec" id="sandwich"><div class="sec-head"><i class="fas fa-hotdog"></i><h2>Sandwich</h2><div class="line"></div></div><div class="grid"><div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/sandwich%20poulet.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Sandwich Poulet"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Sandwich Poulet</div></div><div class="px">650 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/sandwich%20viande.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Sandwich Viande"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Sandwich Viande</div></div><div class="px">700 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/sandwich%20mixte.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Sandwich Mixte"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Sandwich Mixte</div></div><div class="px">900 DA</div></div>
+  </div>
+</div></section>
+<section class="sec" id="burger"><div class="sec-head"><i class="fas fa-burger"></i><h2>Burger</h2><div class="line"></div></div><div class="grid"><div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/burger%20poulet.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Burger Poulet"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Burger Poulet</div></div><div class="px">650 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-2bbeba2b177d4b0f82fc03421a53c876.r2.dev/burger%20viande.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Burger Viande"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Burger Viande</div></div><div class="px">650 DA</div></div>
+  </div>
+</div></section>
+<section class="sec" id="poutine"><div class="sec-head"><i class="fas fa-bowl-food"></i><h2>Poutine</h2><div class="line"></div></div><div class="grid"><div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poutine%20chicken.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poutine Poulet"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poutine Poulet</div></div><div class="px">800 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poutine%20chicken.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poutine Viande"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poutine Viande</div></div><div class="px">1000 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poutine%20chicken.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poutine Mixte"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poutine Mixte</div></div><div class="px">1000 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poutine%20chicken.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poutine Fromagère"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poutine Fromagère</div></div><div class="px">900 DA</div></div>
+  </div>
+<div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poutine%20chicken.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poutine Spéciale"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poutine Spéciale</div></div><div class="px">1100 DA</div></div>
+  </div>
+</div></section>
+<section class="sec" id="poulet"><div class="sec-head"><i class="fas fa-drumstick-bite"></i><h2>Plat Poulet Grillé</h2><div class="line"></div></div><div class="grid"><div class="card">
+    <div class="v3d" data-glb="https://pub-27fc0b7e1d4e4e729713b35ea349b299.r2.dev/poulet%20grille%CC%81s.glb">
+      <model-viewer camera-orbit="0deg 68deg auto" min-camera-orbit="auto 30deg auto" max-camera-orbit="auto 75deg auto" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.3" style="width:100%;height:100%;opacity:0" alt="Poulet Grillé"><button slot="ar-button" style="position:absolute;bottom:10px;right:10px;padding:7px 13px;border:1px solid rgba(255,176,58,.4);border-radius:9px;background:rgba(17,16,20,.65);color:#F4F1EA;font-size:.6rem;letter-spacing:1.5px;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(6px)"><i class="fas fa-cube" style="color:#FFB03A"></i>AR</button></model-viewer>
+      <div class="btn3d" onclick="load3d(this)"><i class="fas fa-cube"></i>Voir en 3D</div>
+    </div>
+    <div class="body"><div><div class="nm">Poulet Grillé</div></div><div class="px">1600 DA</div></div>
+  </div>
+</div></section>
+<footer>© 2025 <span>Bunz</span> — Menu interactif 3D</footer>
+
+<script>
+function load3d(btn){
+  const v=btn.closest('.v3d');
+  v.classList.add('on');
+  const mv=v.querySelector('model-viewer');
+  if(mv&&v.dataset.glb){mv.setAttribute('src',v.dataset.glb);mv.style.opacity='1';}
+}
+</script>
+</body>
+</html>
